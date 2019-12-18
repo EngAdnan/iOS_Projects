@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		12721DB423A826670080FD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12721DB323A826670080FD9B /* Assets.xcassets */; };
 		12721DB723A826670080FD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12721DB523A826670080FD9B /* LaunchScreen.storyboard */; };
 		12721DC223A826670080FD9B /* SingAlongTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12721DC123A826670080FD9B /* SingAlongTestTests.swift */; };
+		12938C1123AABAE10052ABBB /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12938C1023AABAE10052ABBB /* Albums.swift */; };
 		2CE6D5438A2B32FE171AC8C9 /* Pods_SingAlongTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A0624F3633B6C3384C4123 /* Pods_SingAlongTestTests.framework */; };
 		52DA16F055D9E7FE73D84FDE /* Pods_SingAlongTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC62DF5B7125D606D285F0F /* Pods_SingAlongTest.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		12721DBD23A826670080FD9B /* SingAlongTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingAlongTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12721DC123A826670080FD9B /* SingAlongTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingAlongTestTests.swift; sourceTree = "<group>"; };
 		12721DC323A826670080FD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12938C1023AABAE10052ABBB /* Albums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		2805EEACCE93D608960F931C /* Pods-SingAlongTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingAlongTestTests.release.xcconfig"; path = "Target Support Files/Pods-SingAlongTestTests/Pods-SingAlongTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A4D77D139EE16CF8C4E4B74 /* Pods-SingAlongTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingAlongTest.debug.xcconfig"; path = "Target Support Files/Pods-SingAlongTest/Pods-SingAlongTest.debug.xcconfig"; sourceTree = "<group>"; };
 		6BC62DF5B7125D606D285F0F /* Pods_SingAlongTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingAlongTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +78,6 @@
 				71C33EE6577C30E9A451E94F /* Pods-SingAlongTestTests.debug.xcconfig */,
 				2805EEACCE93D608960F931C /* Pods-SingAlongTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,10 +104,11 @@
 		12721DA923A826630080FD9B /* SingAlongTest */ = {
 			isa = PBXGroup;
 			children = (
+				12938C0B23AABA230052ABBB /* Model */,
+				12938C0D23AABA420052ABBB /* View */,
+				12938C0C23AABA350052ABBB /* Controller */,
 				12721DAA23A826630080FD9B /* AppDelegate.swift */,
 				12721DAC23A826630080FD9B /* SceneDelegate.swift */,
-				12721DAE23A826630080FD9B /* ViewController.swift */,
-				12721DB023A826630080FD9B /* Main.storyboard */,
 				12721DB323A826670080FD9B /* Assets.xcassets */,
 				12721DB523A826670080FD9B /* LaunchScreen.storyboard */,
 				12721DB823A826670080FD9B /* Info.plist */,
@@ -121,6 +123,30 @@
 				12721DC323A826670080FD9B /* Info.plist */,
 			);
 			path = SingAlongTestTests;
+			sourceTree = "<group>";
+		};
+		12938C0B23AABA230052ABBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12938C1023AABAE10052ABBB /* Albums.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12938C0C23AABA350052ABBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12721DAE23A826630080FD9B /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		12938C0D23AABA420052ABBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12721DB023A826630080FD9B /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C5F6C05F2402D66E2B043309 /* Frameworks */ = {
@@ -300,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12938C1123AABAE10052ABBB /* Albums.swift in Sources */,
 				12721DAF23A826630080FD9B /* ViewController.swift in Sources */,
 				12721DAB23A826630080FD9B /* AppDelegate.swift in Sources */,
 				12721DAD23A826630080FD9B /* SceneDelegate.swift in Sources */,
