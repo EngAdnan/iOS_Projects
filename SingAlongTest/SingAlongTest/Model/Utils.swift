@@ -17,10 +17,10 @@ public class Utils {
         view.present(alert, animated: true, completion: nil)
     }
     
-    public static func fetchAlbumImage(logoUrl:String, programImageView:UIImageView){
+    public static func fetchAlbumImage(logoUrl:String, imageView:UIImageView){
         
         SingAlongTestManager.downloadImage(Url: logoUrl){  response, error, statusCode in
-            programImageView.image = response!
+            imageView.image = response!
             
         }
         

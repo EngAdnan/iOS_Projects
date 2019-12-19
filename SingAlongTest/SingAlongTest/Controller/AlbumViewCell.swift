@@ -10,4 +10,14 @@ import UIKit
 
 class AlbumViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var albumImageView: UIImageView!
+    
+    func setAlbumImage(albumLogoUrl:String?) {
+        if albumLogoUrl != "" {
+            Utils.fetchAlbumImage(logoUrl: albumLogoUrl!, imageView: albumImageView)
+            
+        }
+        
+    }
+    
 }

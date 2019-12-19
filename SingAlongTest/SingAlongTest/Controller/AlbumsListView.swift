@@ -8,47 +8,57 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "cell"
+
 
 class AlbumsListView: UICollectionViewController {
-
+    
+    var albumsList:[Album]!
+    private let itemsPerRow: CGFloat = 3
+    private let sectionInsets = UIEdgeInsets(top: 50.0,
+    left: 20.0,
+    bottom: 50.0,
+    right: 20.0)
     override func viewDidLoad() {
         super.viewDidLoad()
+        setViewLayoutSetting()
+        fetchListOfAlbums(url:Utils.fetchAlbumsUrl)
+        self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+       
+    }
+    
+    func setViewLayoutSetting(){
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
+        
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
+        if albumsList != nil {
+            return albumsList.count
+        }
         return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumViewCell
+        let albumLogoUrl = albumsList[indexPath.row].thumbnailUrl
+        cell.setAlbumImage(albumLogoUrl: albumLogoUrl)
     
         // Configure the cell
     
@@ -85,5 +95,69 @@ class AlbumsListView: UICollectionViewController {
     
     }
     */
+   
+    
+    func fetchListOfAlbums(url:String){
+        if Connectivity.isConnectedToInternet {
+            SingAlongTestManager.fetchEventDetail(getProgramsUrl: url){ response, error, statusCode in
+                if response != nil {
+                   
+                        self.albumsList = response
+                        self.refreshTable()
+                    
+                }
+                else{
+                    Utils.showAlertView(title: "Error Message", message: "Something wrong happened", view: self)
 
+                    
+                }
+                
+            }
+        }
+        else {
+            Utils.showAlertView(title: "Error", message: "Check Internet Connection", view: self)
+
+        }
+    }
+    
+    func refreshTable() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            return
+        }
+    }
+    
 }
+
+//extension AlbumsListView: UICollectionViewDelegateFlowLayout {
+//
+//    func collectionView(_ collectionView: UICollectionView,
+//                       layout collectionViewLayout: UICollectionViewLayout,
+//                       sizeForItemAt indexPath: IndexPath) -> CGSize {
+//     //2
+//     let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//     let availableWidth = view.frame.width - paddingSpace
+//     let widthPerItem = availableWidth / itemsPerRow
+//
+//     return CGSize(width: widthPerItem, height: widthPerItem)
+//   }
+//
+//   //3
+//    func collectionView(_ collectionView: UICollectionView,
+//                       layout collectionViewLayout: UICollectionViewLayout,
+//                       insetForSectionAt section: Int) -> UIEdgeInsets {
+//     return sectionInsets
+//   }
+//
+//   // 4
+//    func collectionView(_ collectionView: UICollectionView,
+//                       layout collectionViewLayout: UICollectionViewLayout,
+//                       minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//     return sectionInsets.left - 5
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//           return 0.0
+//       }
+//
+//}

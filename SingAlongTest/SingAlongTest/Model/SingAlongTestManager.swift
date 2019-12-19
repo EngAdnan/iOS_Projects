@@ -11,10 +11,10 @@ import UIKit
 import Alamofire
 class SingAlongTestManager {
     
-    static func fetchEventDetail(getProgramsUrl:String, completionHandler: @escaping (Album?, NSError?,Int?) -> ()) {
+    static func fetchEventDetail(getProgramsUrl:String, completionHandler: @escaping ([Album]?, NSError?,Int?) -> ()) {
         struct HTTPBinResponse: Decodable { let result: Album? }
         AF.request(getProgramsUrl)
-            .responseDecodable(of: Album.self ) { response in
+            .responseDecodable(of: [Album].self ) { response in
                 print(response)
                 switch response.result {
                 case .success(let value):
