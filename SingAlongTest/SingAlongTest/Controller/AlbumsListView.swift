@@ -7,14 +7,15 @@
 //
 
 import UIKit
-
+import ViewAnimator
 private let reuseIdentifier = "cell"
 
 class AlbumsListView: UICollectionViewController {
     
     var albumsList:[Album]!
     private let itemsPerRow: CGFloat = 3
-    
+    private let animations = [AnimationType.from(direction: .top, offset: 20.0)]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewLayoutSetting()
@@ -64,6 +65,11 @@ class AlbumsListView: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedAlbum = albumsList[indexPath.row].albumId
         viewEventDetails(selectedAlbum: selectedAlbum)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+                cell.animate(animations: animations, duration: 1.5)
+
     }
     
     
