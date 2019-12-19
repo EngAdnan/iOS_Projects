@@ -20,7 +20,6 @@ class AlbumDetailsViewController: UITableViewController {
         albumDetails =  albumDetails.filter { $0.self.albumId == albumId }
     }
     
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

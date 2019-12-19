@@ -11,8 +11,7 @@ import UIKit
 import Alamofire
 class SingAlongTestManager {
     
-    static func fetchEventDetail(getProgramsUrl:String, completionHandler: @escaping ([Album]?, NSError?,Int?) -> ()) {
-        struct HTTPBinResponse: Decodable { let result: Album? }
+    static func fetchAlbums(getProgramsUrl:String, completionHandler: @escaping ([Album]?, NSError?,Int?) -> ()) {
         AF.request(getProgramsUrl)
             .responseDecodable(of: [Album].self ) { response in
                 print(response)
