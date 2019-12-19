@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12528FCF23ABCC1700601633 /* AlbumDetailsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12528FCE23ABCC1700601633 /* AlbumDetailsViewCell.swift */; };
+		12528FD123ABCC8500601633 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12528FD023ABCC8500601633 /* AlbumDetailsViewController.swift */; };
+		12528FD323ABD5F900601633 /* AlbumMainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12528FD223ABD5F900601633 /* AlbumMainViewCell.swift */; };
 		12721DAB23A826630080FD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12721DAA23A826630080FD9B /* AppDelegate.swift */; };
 		12721DAD23A826630080FD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12721DAC23A826630080FD9B /* SceneDelegate.swift */; };
-		12721DAF23A826630080FD9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12721DAE23A826630080FD9B /* ViewController.swift */; };
 		12721DB223A826630080FD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12721DB023A826630080FD9B /* Main.storyboard */; };
 		12721DB423A826670080FD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12721DB323A826670080FD9B /* Assets.xcassets */; };
 		12721DB723A826670080FD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12721DB523A826670080FD9B /* LaunchScreen.storyboard */; };
@@ -36,10 +38,12 @@
 
 /* Begin PBXFileReference section */
 		06A0624F3633B6C3384C4123 /* Pods_SingAlongTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingAlongTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12528FCE23ABCC1700601633 /* AlbumDetailsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewCell.swift; sourceTree = "<group>"; };
+		12528FD023ABCC8500601633 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		12528FD223ABD5F900601633 /* AlbumMainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMainViewCell.swift; sourceTree = "<group>"; };
 		12721DA723A826630080FD9B /* SingAlongTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingAlongTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12721DAA23A826630080FD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12721DAC23A826630080FD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		12721DAE23A826630080FD9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12721DB123A826630080FD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12721DB323A826670080FD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12721DB623A826670080FD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,9 +153,11 @@
 		12938C0C23AABA350052ABBB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				12721DAE23A826630080FD9B /* ViewController.swift */,
 				12938C1823AB9C5F0052ABBB /* AlbumsListView.swift */,
 				12938C1A23AB9DE50052ABBB /* AlbumViewCell.swift */,
+				12528FD023ABCC8500601633 /* AlbumDetailsViewController.swift */,
+				12528FCE23ABCC1700601633 /* AlbumDetailsViewCell.swift */,
+				12528FD223ABD5F900601633 /* AlbumMainViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -343,9 +349,11 @@
 			files = (
 				12938C1323AB973C0052ABBB /* Utils.swift in Sources */,
 				12938C1123AABAE10052ABBB /* Albums.swift in Sources */,
+				12528FD123ABCC8500601633 /* AlbumDetailsViewController.swift in Sources */,
+				12528FD323ABD5F900601633 /* AlbumMainViewCell.swift in Sources */,
 				12938C1923AB9C5F0052ABBB /* AlbumsListView.swift in Sources */,
+				12528FCF23ABCC1700601633 /* AlbumDetailsViewCell.swift in Sources */,
 				12938C1523AB97F70052ABBB /* SingAlongTestManager.swift in Sources */,
-				12721DAF23A826630080FD9B /* ViewController.swift in Sources */,
 				12721DAB23A826630080FD9B /* AppDelegate.swift in Sources */,
 				12721DAD23A826630080FD9B /* SceneDelegate.swift in Sources */,
 				12938C1723AB99500052ABBB /* Connectivity.swift in Sources */,
